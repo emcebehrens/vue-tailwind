@@ -1,79 +1,60 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import 'tailwindcss';
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@custom-variant dark (&:where(.dark, .dark *));
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@theme {
+  --color-primary: #000000;
+  --color-primary-dark: #ffffff;
+  --color-secondary: #00548A;
+  --color-secondary-dark: #F4F6F8;
+  --color-background: #ffffff;
+  --color-background-dark: #121212;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* This CSS rule is a universal reset that applies the box-sizing: border-box property 
+to every element on the page. This reset is particularly valuable in Vue.js projects 
+where you'll be creating reusable components that need consistent sizing behavior across
+different contexts. It eliminates one of the most common sources of layout bugs and makes 
+your CSS more maintainable. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
+/*This CSS rule establishes the foundation for your Vue.js application's body element, 
+creating a full-viewport layout with a sophisticated theming system.
+The margin: 0 removes the browser's default margin from the body element. 
+Different browsers apply varying amounts of default margin to the body, so this 
+reset ensures consistent spacing across all browsers - crucial for Vue applications 
+where you want pixel-perfect control over your layout.
+
+The min-height: 100vh ensures the body always takes up at least the full viewport 
+height (100% of the visible screen). The vh unit represents viewport height units, 
+where 100vh equals the full height of the browser window. This is particularly important 
+for single-page Vue applications where you want your app to fill the entire screen, even 
+when content is minimal.*/
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
 }
 
+/* Typography with responsive sizing */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-.card {
-  padding: 2em;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@media (min-width: 640px) {
+  h1 {
+    font-size: 2.25rem;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3rem;
   }
 }
