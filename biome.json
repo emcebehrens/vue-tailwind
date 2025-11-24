@@ -53,9 +53,7 @@
 		"experimentalFullSupportEnabled": true,
 		"formatter": {
 			"enabled": true,
-			"indentScriptAndStyle": true,
-			"attributePosition": "multiline",
-			"bracketSameLine": true
+			"indentScriptAndStyle": true
 		}
 	},
 	"css": {
