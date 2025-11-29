@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
 import TailwindShowcase from "./components/TailwindShowcase.vue";
+import { onMounted, ref } from "vue";
 
 const darkMode = ref(false);
 
@@ -16,6 +16,7 @@ function saveTheme() {
 }
 
 onMounted(() => {
+  // Check for saved theme or default to system preference
   const savedTheme = localStorage.getItem("theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
