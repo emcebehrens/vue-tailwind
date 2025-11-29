@@ -18,7 +18,6 @@ npm create vite@latest PROJECT_NAME --template vue-ts
 
 Add Tailwind :
 
-
 npm install tailwindcss @tailwindcss/vite
 
 Then add tailwind plugin in vite.config.ts :
