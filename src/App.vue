@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
+import TailwindShowcase from "./components/TailwindShowcase.vue";
 import { onMounted, ref } from "vue";
 
 const darkMode = ref(false);
@@ -47,7 +47,20 @@ onMounted(() => {
       </div>
     </header>
 
-    <HelloWorld msg="Vite + Vue" />
+    <section class="bg-gray-50 dark:bg-gray-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+            Complete Tailwind Showcase
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Explore all the Tailwind CSS features, components, and utilities
+            available in this project.
+          </p>
+        </div>
+        <TailwindShowcase />
+      </div>
+    </section>
   </div>
 </template>
 
